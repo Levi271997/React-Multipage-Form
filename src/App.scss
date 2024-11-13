@@ -1,3 +1,5 @@
+@import './stylesheets/global.scss';
+
 
 @font-face {
   font-family: 'Ubuntu';
@@ -30,3 +32,28 @@ body{
   font-family: 'Ubuntu',sans-serif;
 }
 
+
+.container{
+  max-width: 940px;
+  margin: auto;
+}
+
+.App{
+  background-color: $clr-EFF5FF;
+  width: 100vw;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container{
+  background-color: #fff;
+  padding: 16px;
+  display: flex;
+
+  .side-bar{
+    width: 274px;
+    height: 568px;
+    flex-shrink: 0;
+  }
+}
