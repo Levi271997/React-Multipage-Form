@@ -33,9 +33,11 @@ body{
 }
 
 
-.container{
-  max-width: 940px;
-  margin: auto;
+main{
+  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .App{
@@ -47,10 +49,19 @@ body{
   background-color: #fff;
   padding: 16px;
   display: flex;
-
+  width: 940px;
+  height: 600px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #FFF;
+  box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.10);
   .side-bar{
+    border-radius: 10px;
     width: 274px;
     height: 568px;
     flex-shrink: 0;
+    background-color: $clr-483EFF;
+    background-image: url(./assets/images/bg-sidebar-desktop.svg);
+    background-position: bottom;
   }
 }
