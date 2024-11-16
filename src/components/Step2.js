@@ -27,7 +27,7 @@ const Step2 = ()=>{
                         <img src={arcade}/>
                         <div>
                             <p className='opt-title'>Arcade</p>
-                            <p className='opt-price'>$9/mo</p>
+                            <p className='opt-price'>{planDuration === 'monthly' ? '$9/mo' : '$90/yr'}</p>
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@ const Step2 = ()=>{
                         <img src={advanced}/>
                         <div>
                             <p className='opt-title'>Advanced</p>
-                            <p className='opt-price'>$12/mo</p>
+                            <p className='opt-price'>{planDuration === 'monthly' ? '$12/mo' : '$120/yr'}</p>
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@ const Step2 = ()=>{
                         <img src={pro}/>
                         <div>
                             <p className='opt-title'>Pro</p>
-                            <p className='opt-price'>$15/mo</p>
+                            <p className='opt-price'>{planDuration === 'monthly' ? '$15/mo' : '$150/yr'}</p>
                         </div>
                     </div>
                 
