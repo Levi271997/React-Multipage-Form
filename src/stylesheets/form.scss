@@ -1,7 +1,12 @@
-
+form{
+  margin-top: 35px;
+}
 .form-pagewrap{
     padding: 40px 100px 16px  100px;
     flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .form-title{
@@ -23,6 +28,12 @@
 
   .fieldgroup 
   {
+    .input-heading{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
     label{
       color: $clr-denim;
       font-size: 14px;
@@ -34,5 +45,84 @@
     border-radius: 8px;
     border: 1px solid $clr-9699AA;
     background:#fff;
+    width: 100%;
+    padding:12px 16px;
+    transition: $trans-fast;
+
+    color:$clr-denim;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156.25%;
+
+    &::placeholder{
+      color:$clr-9699AA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156.25%;
+
+    }
+    &::-moz-placeholder{
+      color:$clr-9699AA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156.25%;
+
+    }
+    &::-webkit-input-placeholder{
+      color:$clr-9699AA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 156.25%;
+  }
+
+
+  &:hover,&:focus-visible{
+    border: 1px solid $clr-483EFF;
+    outline: none;
+  }
+
+  }
+
+  &:not(:last-child){
+    margin-bottom: 24px;
+  }
+}
+
+.steps-buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.btn{
+  border-radius: 8px;
+  font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+transition: $trans-fast;
+cursor: pointer;
+
+  &.steps-next{
+    background-color: $clr-denim;
+    color: #fff;
+    padding: 14px 25px;
+
+    &:hover{
+      background-color: $clr-164A8A;
+    }
+  }
+  
+  &.steps-prev{
+    background-color: transparent;
+    color: $clr-9699AA;
+
+    &:hover{
+      color:$clr-denim;
+    }
   }
 }

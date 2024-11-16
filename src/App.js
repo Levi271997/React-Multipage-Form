@@ -1,6 +1,8 @@
 import './stylesheets/App.scss';
 import Sidebar from './components/Sidebar';
 import Step1 from './components/Step1';
+import Step2 from './components/Step2';
+
 
 function App() {
   return (
@@ -11,7 +13,13 @@ function App() {
                 <Sidebar/>
                 <div className='form-pagewrap'>
               
-                  <Step1/>
+                 <div>
+                   <Step2/>
+                 </div>
+                 <div className='steps-buttons'>
+                   <button className='btn steps-prev'>Go Back</button>
+                   <button className='btn steps-next'>Next Step</button>
+                 </div>
                 </div>
               </div>
            

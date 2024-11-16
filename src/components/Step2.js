@@ -1,8 +1,8 @@
-const Step1 = ()=>{
+const Step2 = ()=>{
     return(
         <>
-          <h2 className='form-title'>Personal Info</h2>
-          <p className='form-instruct'>Please provide your name, email address, and phone number.</p>
+          <h2 className='form-title'>Select your plan</h2>
+          <p className='form-instruct'>You have the option of monthly or yearly billing.</p>
 
           <form>
                 <div className="fieldgroup">
@@ -33,4 +33,4 @@ const Step1 = ()=>{
     )
 }
 
-export default Step1;
+export default Step2;

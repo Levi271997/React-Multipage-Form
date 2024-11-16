@@ -6,3 +6,12 @@ $clr-483EFF:#483EFF;
 $clr-BEE2FD:#BEE2FD;
 $clr-ABBCFF:#ABBCFF;
 $clr-9699AA:#9699AA;
+$clr-164A8A:#164A8A;
+
+$trans-fast: 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+$trans-medium: 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+$trans-slow: 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+
+button{
+    all: unset;
+}
