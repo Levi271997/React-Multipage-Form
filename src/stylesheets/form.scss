@@ -1,0 +1,19 @@
+.form-pagewrap{
+    padding: 40px 100px 16px  100px;
+    flex-basis: 100%;
+  }
+  
+  .form-title{
+    color: $clr-denim;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .form-instruct{
+    color: $clr-9699AA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 156.25% */
+  }
