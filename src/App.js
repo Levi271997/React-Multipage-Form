@@ -11,8 +11,17 @@ import { useState } from 'react';
 
 function App() {
 
-  const [step, setStep] = useState(1);
+ 
+  const [userInfo, setUserInfo] = useState({
+    name:null,
+    email:null,
+    number:null,
+  });
 
+  const [selectedPlan, setSelectedPlan]= useState({
+    plan:'arcade',
+    duration:'monthly'
+  });
 
  const handleNextStepSet=()=>{
     setStep((currentStep)=> (step < 4) ? currentStep + 1 : step);
