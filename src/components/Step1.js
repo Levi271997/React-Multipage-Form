@@ -10,7 +10,7 @@ const Step1 = ()=>{
                         <label>Name</label>
                         <p className="error-text"></p>
                     </div>
-                    <input typeof="text" name="name" placeholder="e.g. Stephen King"/>
+                    <input type="text" name="name" placeholder="e.g. Stephen King"/>
                 </div>    
 
                 <div className="fieldgroup">
@@ -18,7 +18,7 @@ const Step1 = ()=>{
                         <label>Email address</label>
                         <p className="error-text"></p>
                     </div>
-                    <input typeof="text" name="name" placeholder="e.g. stephenking@lorem.com"/>
+                    <input type="text" name="name" placeholder="e.g. stephenking@lorem.com"/>
                 </div>    
 
                  <div className="fieldgroup">
@@ -26,7 +26,7 @@ const Step1 = ()=>{
                         <label>Phone Number</label>
                         <p className="error-text"></p>
                     </div>
-                    <input typeof="text" name="name" placeholder="e.g. +1 234 567 890"/>
+                    <input type="text" name="name" placeholder="e.g. +1 234 567 890"/>
                 </div>            
           </form>
         </>
