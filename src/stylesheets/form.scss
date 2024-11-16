@@ -257,3 +257,86 @@ div{
     max-height: 50px;
   }
 }
+
+
+.addons-card{
+  border-radius: 8px;
+border: 1px solid $clr-D6D9E6;
+background: #fff;
+padding: 18px 24px;
+display: flex;
+flex-wrap: nowrap;
+align-items: center;
+justify-content: space-between;
+position: relative;
+
+
+&:has(.check-item:checked){
+  border: 1px solid $clr-483EFF;
+}
+}
+
+
+.check-item{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.card-checkbox{
+  display: flex;
+  align-items: center;
+  gap:24px;
+}
+.card-title{
+  color: $clr-denim;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card-info{
+  color:$clr-9699AA;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+.card-price{
+  color: $clr-483EFF;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+.checkBox-wrap{
+  width: 20px;
+  height: 20px;
+  border: 1px solid $clr-D6D9E6;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+
+  &::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:100%;
+    background: url(../assets/images/check.svg);
+    background-size: cover;
+    background-position: center;
+    transform: scale(0);
+    transition: $trans-fast;
+  }
+}
+
+.addons-card:has(.check-item:checked) .checkBox-wrap::after{
+  transform: scale(1);
+}
+.addons-card:not(:last-child){
+  margin-bottom: 16px;
+}
