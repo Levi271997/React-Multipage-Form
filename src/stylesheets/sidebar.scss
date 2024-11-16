@@ -38,6 +38,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #FFF;
+      transition: $trans-fast;
 
       &.active{
           background-color: $clr-BEE2FD;
