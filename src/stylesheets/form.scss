@@ -241,3 +241,13 @@ div{
   font-weight: 700;
 }
 
+.yearly-bonus{
+  transition: $trans-fast;
+  color: $clr-denim;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-height: 0;
+  overflow: hidden;
+}

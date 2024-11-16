@@ -28,6 +28,7 @@ const Step2 = ()=>{
                         <div>
                             <p className='opt-title'>Arcade</p>
                             <p className='opt-price'>{planDuration === 'monthly' ? '$9/mo' : '$90/yr'}</p>
+                            <span className='yearly-bonus'>2 months free</span>
                         </div>
                     </div>
 
