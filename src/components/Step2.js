@@ -28,7 +28,7 @@ const Step2 = ()=>{
                         <div>
                             <p className='opt-title'>Arcade</p>
                             <p className='opt-price'>{planDuration === 'monthly' ? '$9/mo' : '$90/yr'}</p>
-                            <span className='yearly-bonus'>2 months free</span>
+                            <span className={`yearly-bonus ${planDuration === 'yearly' ? 'active':''}`}>2 months free</span>
                         </div>
                     </div>
 
@@ -38,6 +38,7 @@ const Step2 = ()=>{
                         <div>
                             <p className='opt-title'>Advanced</p>
                             <p className='opt-price'>{planDuration === 'monthly' ? '$12/mo' : '$120/yr'}</p>
+                            <span className={`yearly-bonus ${planDuration === 'yearly' ? 'active':''}`}>2 months free</span>
                         </div>
                     </div>
 
@@ -47,6 +48,7 @@ const Step2 = ()=>{
                         <div>
                             <p className='opt-title'>Pro</p>
                             <p className='opt-price'>{planDuration === 'monthly' ? '$15/mo' : '$150/yr'}</p>
+                            <span className={`yearly-bonus ${planDuration === 'yearly' ? 'active':''}`}>2 months free</span>
                         </div>
                     </div>
                 

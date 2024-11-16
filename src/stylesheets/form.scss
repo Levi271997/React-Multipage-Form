@@ -250,4 +250,10 @@ div{
   line-height: normal;
   max-height: 0;
   overflow: hidden;
+  display: block;
+
+  &.active{
+    margin-top: 7px;
+    max-height: 50px;
+  }
 }
