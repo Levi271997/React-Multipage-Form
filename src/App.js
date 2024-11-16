@@ -4,6 +4,7 @@ import Step1 from './components/Step1';
 import Step2 from './components/Step2';
 import Step3 from './components/Step3';
 import Finishing from './components/Finishing';
+import Thankyou from './components/Thankyou';
 
 
 
@@ -16,8 +17,8 @@ function App() {
                 <Sidebar/>
                 <div className='form-pagewrap'>
               
-                 <div>
-                   <Finishing/>
+                 <div className='forms-group'>
+                   <Thankyou/>
                  </div>
                  <div className='steps-buttons'>
                    <button className='btn steps-prev'>Go Back</button>

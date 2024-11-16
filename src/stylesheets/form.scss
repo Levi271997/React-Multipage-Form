@@ -433,3 +433,24 @@ font-style: normal;
 font-weight: 700;
 line-height: 20px; /* 100% */
 }
+.forms-group{
+  flex: 1;
+}
+
+.page-thankyou{
+  height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      margin-bottom: 32px;
+    }
+    .form-title{
+      margin-bottom: 14px;
+    }
+    .form-instruct{
+      text-align: center;
+    }
+}
