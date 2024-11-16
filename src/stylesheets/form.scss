@@ -1,3 +1,4 @@
+
 .form-pagewrap{
     padding: 40px 100px 16px  100px;
     flex-basis: 100%;
@@ -9,6 +10,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 11px;
   }
   .form-instruct{
     color: $clr-9699AA;
@@ -17,3 +19,20 @@
     font-weight: 400;
     line-height: 25px; /* 156.25% */
   }
+
+
+  .fieldgroup 
+  {
+    label{
+      color: $clr-denim;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+  }
+  input{
+    border-radius: 8px;
+    border: 1px solid $clr-9699AA;
+    background:#fff;
+  }
+}
