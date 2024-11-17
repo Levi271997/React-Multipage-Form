@@ -1,7 +1,7 @@
 import arcade from '../assets/images/icon-arcade.svg';
 import advanced from '../assets/images/icon-advanced.svg';
 import pro from '../assets/images/icon-pro.svg';
-import { FormObjectsProvider } from '../context/FormContext';
+import { useFormObjects } from '../context/FormContext';
 
 const Step2 = ()=>{
 
@@ -16,14 +16,14 @@ const Step2 = ()=>{
         selectedPlanDuration,
         setSelectedPlanDuration, 
       
-    } = FormObjectsProvider();
+    } = useFormObjects();
 
     const handleOptionChange = (event)=>{
         setSelectedPlan(event.target.value);
     }
 
     const handleToggle = (event)=>{
-        setSelectedPlanDuration(selectedPlanDuration === 'monthly' ? 'yearly' : 'monthly');
+        setSelectedPlanDuration(selectedPlanDuration === 'Monthly' ? 'Yearly' : 'Monthly');
     }
     return(
         <>
@@ -37,8 +37,8 @@ const Step2 = ()=>{
                         <img src={arcade}/>
                         <div>
                             <p className='opt-title'>Arcade</p>
-                            <p className='opt-price'>{selectedPlanDuration=== 'monthly' ? '$9/mo' : '$90/yr'}</p>
-                            <span className={`yearly-bonus ${selectedPlanDuration=== 'yearly' ? 'active':''}`}>2 months free</span>
+                            <p className='opt-price'>{selectedPlanDuration=== 'Monthly' ? '$9/mo' : '$90/yr'}</p>
+                            <span className={`yearly-bonus ${selectedPlanDuration=== 'Yearly' ? 'active':''}`}>2 months free</span>
                         </div>
                     </div>
 
@@ -47,8 +47,8 @@ const Step2 = ()=>{
                         <img src={advanced}/>
                         <div>
                             <p className='opt-title'>Advanced</p>
-                            <p className='opt-price'>{selectedPlanDuration === 'monthly' ? '$12/mo' : '$120/yr'}</p>
-                            <span className={`yearly-bonus ${selectedPlanDuration === 'yearly' ? 'active':''}`}>2 months free</span>
+                            <p className='opt-price'>{selectedPlanDuration === 'Monthly' ? '$12/mo' : '$120/yr'}</p>
+                            <span className={`yearly-bonus ${selectedPlanDuration === 'Yearly' ? 'active':''}`}>2 months free</span>
                         </div>
                     </div>
 
@@ -57,19 +57,19 @@ const Step2 = ()=>{
                         <img src={pro}/>
                         <div>
                             <p className='opt-title'>Pro</p>
-                            <p className='opt-price'>{selectedPlanDuration === 'monthly' ? '$15/mo' : '$150/yr'}</p>
-                            <span className={`yearly-bonus ${selectedPlanDuration === 'yearly' ? 'active':''}`}>2 months free</span>
+                            <p className='opt-price'>{selectedPlanDuration === 'Monthly' ? '$15/mo' : '$150/yr'}</p>
+                            <span className={`yearly-bonus ${selectedPlanDuration === 'Yearly' ? 'active':''}`}>2 months free</span>
                         </div>
                     </div>
                 
                 </div>   
 
                 <div className='switch'>
-                    <div className={`${selectedPlanDuration==='monthly' ? 'active':''}`}>Monthly</div>
+                    <div className={`${selectedPlanDuration==='Monthly' ? 'active':''}`}>Monthly</div>
                     <div className='toggleBox'>
                         <input type='checkbox' onChange={handleToggle}/>                                                       
                     </div>
-                    <div className={`${selectedPlanDuration ==='yearly' ? 'active':''}`}>Yearly</div>
+                    <div className={`${selectedPlanDuration ==='Yearly' ? 'active':''}`}>Yearly</div>
                     
                 </div>
           </form>

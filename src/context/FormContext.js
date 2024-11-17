@@ -28,8 +28,8 @@ export const FormObjectsProvider =({children}) => {
       const numbererror =  useRef();
 
 
-      const [selectedPlan, setSelectedPlan]= useState('arcade');
-      const [selectedPlanDuration, setSelectedPlanDuration] = useState('monthly');
+      const [selectedPlan, setSelectedPlan]= useState('Arcade');
+      const [selectedPlanDuration, setSelectedPlanDuration] = useState('Monthly');
     
       return(
         <FormContext.Provider value={{

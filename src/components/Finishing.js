@@ -1,4 +1,22 @@
+import { useFormObjects } from "../context/FormContext";
+
 const Finishing = ()=>{
+    
+    const { inputname,
+        inputemail, 
+        inputnumber, 
+        step, 
+        setStep, 
+        userInfo, 
+        handleupdateUserInfo, 
+        selectedPlan, 
+        setSelectedPlan,
+        selectedPlanDuration,
+        setSelectedPlanDuration, 
+        nameerror, 
+        emailerror, 
+        numbererror }= useFormObjects();
+    
     return(
         <>
           <h2 className='form-title'>Pick add-ons</h2>
@@ -8,7 +26,7 @@ const Finishing = ()=>{
                 <ul className="list-wrapper">
                     <li className="list-item plan">
                         <div>
-                            <p className="list-title">Arcade(Monthly)</p>
+                            <p className="list-title">{selectedPlan}({selectedPlanDuration})</p>
                             <button className="change-btn">Change</button>
                         </div>
                         <p className="list-price">$9/mo</p>

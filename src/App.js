@@ -18,10 +18,12 @@ function App() {
 
 
  const handleNextStepSet=()=>{
-  const name = inputname.current.value;
-  const email = inputemail.current.value;
-  const number = inputnumber.current.value;
+  const name = userInfo.name;
+  const email =userInfo.email;
+  const number =userInfo.number;
 
+  if(step == 1){
+    
   if(name !== '' && email !== '' && number !== ''){
     setStep((currentStep)=> (step < 4) ? currentStep + 1 : step);
 
@@ -57,6 +59,9 @@ function App() {
     inputnumber.current.classList.remove('errorinput');
     numbererror.current.style.display="none";
     numbererror.current.innerText="";
+  }
+  }else{
+    setStep((currentStep)=> (step < 4) ? currentStep + 1 : step);
   }
  }
  const handlePrevStepSet=()=>{
