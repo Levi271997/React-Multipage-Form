@@ -5,27 +5,59 @@ import Step2 from './components/Step2';
 import Step3 from './components/Step3';
 import Finishing from './components/Finishing';
 import Thankyou from './components/Thankyou';
-import { useState } from 'react';
-
+import { useContext, useRef, useState } from 'react';
+import { useFormObjects } from './context/FormContext';
 
 
 function App() {
 
-  const [step, setStep] = useState(1);
- 
-  const [userInfo, setUserInfo] = useState({
-    name:null,
-    email:null,
-    number:null,
-  });
+  const {step, setStep} = useFormObjects();
+ const {userInfo} = useFormObjects();
 
-  const [selectedPlan, setSelectedPlan]= useState({
-    plan:'arcade',
-    duration:'monthly'
-  });
+ const {inputname,inputemail,inputnumber, nameerror, emailerror, numbererror} = useFormObjects();
+
 
  const handleNextStepSet=()=>{
+  const name = inputname.current.value;
+  const email = inputemail.current.value;
+  const number = inputnumber.current.value;
+
+  if(name !== '' && email !== '' && number !== ''){
     setStep((currentStep)=> (step < 4) ? currentStep + 1 : step);
+
+  }
+
+
+  if(name === ''){
+    inputname.current.classList.add('errorinput');
+    nameerror.current.style.display="block";
+    nameerror.current.innerText="This field is required";
+  }else{
+    inputname.current.classList.remove('errorinput');
+    nameerror.current.style.display="none";
+    nameerror.current.innerText="";
+  }
+
+  if(email === ''){
+    inputemail.current.classList.add('errorinput');
+    emailerror.current.style.display="block";
+    emailerror.current.innerText="This field is required";
+  }else{
+    inputemail.current.classList.remove('errorinput');
+    emailerror.current.style.display="none";
+    emailerror.current.innerText="";
+  }
+
+
+  if(number === ''){
+    inputnumber.current.classList.add('errorinput');
+    numbererror.current.style.display="block";
+    numbererror.current.innerText="This field is required";
+  }else{
+    inputnumber.current.classList.remove('errorinput');
+    numbererror.current.style.display="none";
+    numbererror.current.innerText="";
+  }
  }
  const handlePrevStepSet=()=>{
   setStep((currentStep)=> (step > 1) ? currentStep - 1 :  step);

@@ -85,11 +85,18 @@ form{
     outline: none;
   }
 
+  &.errorinput{
+    border:1px solid $clr-red;
+  }
+
   }
 
   &:not(:last-child){
     margin-bottom: 24px;
   }
+
+
+ 
 }
 
 .steps-buttons{
@@ -453,4 +460,14 @@ line-height: 20px; /* 100% */
     .form-instruct{
       text-align: center;
     }
+}
+
+.error-text{
+  color: $clr-red;
+text-align: right;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+display: none;
 }

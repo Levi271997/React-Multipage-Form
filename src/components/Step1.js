@@ -1,6 +1,11 @@
-
+import { useFormObjects } from "../context/FormContext";
 
 const Step1 = ()=>{
+
+    const {userInfo, handleupdateUserInfo, inputname, inputemail, inputnumber, nameerror, emailerror, numbererror} = useFormObjects();
+  
+    
+
     return(
         <>
           <h2 className='form-title'>Personal Info</h2>
@@ -10,25 +15,25 @@ const Step1 = ()=>{
                 <div className="fieldgroup">
                     <div className="input-heading">
                         <label>Name</label>
-                        <p className="error-text"></p>
+                        <p ref={nameerror} className="error-text"></p>
                     </div>
-                    <input type="text" name="name" placeholder="e.g. Stephen King"/>
+                    <input ref={inputname}  type="text" name="name" value={userInfo.name} onChange={handleupdateUserInfo} placeholder="e.g. Stephen King"/>
                 </div>    
 
                 <div className="fieldgroup">
                     <div className="input-heading">
                         <label>Email address</label>
-                        <p className="error-text"></p>
+                        <p ref={emailerror} className="error-text"></p>
                     </div>
-                    <input type="text" name="name" placeholder="e.g. stephenking@lorem.com"/>
+                    <input ref={inputemail} type="email" name="email" value={userInfo.email} onChange={handleupdateUserInfo}  placeholder="e.g. stephenking@lorem.com"/>
                 </div>    
 
                  <div className="fieldgroup">
                     <div className="input-heading">
                         <label>Phone Number</label>
-                        <p className="error-text"></p>
+                        <p ref={numbererror} className="error-text"></p>
                     </div>
-                    <input type="text" name="name" placeholder="e.g. +1 234 567 890"/>
+                    <input ref={inputnumber} type="number" name="number"  value={userInfo.number} onChange={handleupdateUserInfo} placeholder="e.g. +1 234 567 890"/>
                 </div>            
           </form>
         </>
