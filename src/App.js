@@ -11,6 +11,7 @@ import { useState } from 'react';
 
 function App() {
 
+  const [step, setStep] = useState(1);
  
   const [userInfo, setUserInfo] = useState({
     name:null,
@@ -42,8 +43,11 @@ function App() {
                  </div>
                  <div className='steps-buttons'>
                   {(step > 1 ) ?  <button onClick={handlePrevStepSet} className='btn steps-prev'>Go Back</button> : null}
-                   <button onClick={handleNextStepSet} className='btn steps-next'>{(step !== 4) ? 'Next Step': 'Confirm'}</button>
-                 </div>
+
+                  {
+                    (step !== 4) ?  <button onClick={handleNextStepSet} className='btn steps-next'>Next Step</button>:  <button className='btn steps-next'>Confirm</button>
+                  }
+                   </div>
                 </div>
               </div>
            
