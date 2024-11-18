@@ -35,29 +35,29 @@ export const FormObjectsProvider =({children}) => {
         {
           icon:arcade,
           planName:'Arcade',
-          planMoPrice: '$9/mo',
-          planYearPrice:'$90/Yr',
+          planMoPrice: 9,
+          planYearPrice:90,
           planBonus:'2 months free'
         },
         {
           icon:advanced,
           planName:'Advanced',
-          planMoPrice: '$12/mo',
-          planYearPrice:'$120/Yr',
+          planMoPrice: 12,
+          planYearPrice:120,
           planBonus:'2 months free'
         },
         {
           icon:pro,
           planName:'Pro',
-          planMoPrice: '$15/mo',
-          planYearPrice:'$150/Yr',
+          planMoPrice: 15,
+          planYearPrice:150,
           planBonus:'2 months free'
         },
       ]
 
       const [selectedPlan, setSelectedPlan]= useState('Arcade');
       const [selectedPlanDuration, setSelectedPlanDuration] = useState('Monthly');
-    
+      const [selectedPlanId, setSelectedPlanId] = useState(0);
       return(
         <FormContext.Provider value={{
           inputname,
@@ -74,7 +74,9 @@ export const FormObjectsProvider =({children}) => {
           nameerror, 
           emailerror, 
           numbererror,
-          pricingPlans }}>
+          pricingPlans,
+          selectedPlanId,
+          setSelectedPlanId }}>
                 {children}
         </FormContext.Provider>
       )

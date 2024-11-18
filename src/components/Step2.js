@@ -15,12 +15,15 @@ const Step2 = ()=>{
         setSelectedPlan,
         selectedPlanDuration,
         setSelectedPlanDuration, 
-        pricingPlans
+        pricingPlans,
+        setSelectedPlanId
       
     } = useFormObjects();
 
     const handleOptionChange = (event)=>{
         setSelectedPlan(event.target.value);
+        const planId = event.target.dataset.attr;
+        setSelectedPlanId(planId);
     }
 
     const handleToggle = (event)=>{
@@ -34,14 +37,14 @@ const Step2 = ()=>{
           <form>
                <div className="plan-opt">
 {
-    pricingPlans.map((pricing)=>{
+    pricingPlans.map((pricing, index)=>{
         return(
-            <div key={pricing.planName} className="opt">
-                        <input type="radio" value={pricing.planName}  name="planOptions" onChange={handleOptionChange} checked={selectedPlan === pricing.planName}/>
+            <div key={index} className="opt">
+                        <input type="radio" value={pricing.planName} data-attr={index}  name="planOptions" onChange={handleOptionChange} checked={selectedPlan === pricing.planName}/>
                         <img src={pricing.icon}/>
                         <div>
                             <p className='opt-title'>{pricing.planName}</p>
-                            <p className='opt-price'>{selectedPlanDuration=== 'Monthly' ? pricing.planMoPrice : pricing.planYearPrice}</p>
+                            <p className='opt-price'>{selectedPlanDuration === 'Monthly' ? `$${pricing.planMoPrice}/mo` : `$${pricing.planYearPrice}/yr`}                            </p>
                             <span className={`yearly-bonus ${selectedPlanDuration=== 'Yearly' ? 'active':''}`}>{pricing.planBonus}</span>
                         </div>
                     </div>

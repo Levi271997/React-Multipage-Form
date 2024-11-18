@@ -15,7 +15,15 @@ const Finishing = ()=>{
         setSelectedPlanDuration, 
         nameerror, 
         emailerror, 
-        numbererror }= useFormObjects();
+        numbererror,
+        pricingPlans,
+    selectedPlanId
+ }= useFormObjects();
+
+        const handleChangePlan=()=>{
+            setStep(2);
+            console.log(selectedPlanId);
+        }
     
     return(
         <>
@@ -27,9 +35,9 @@ const Finishing = ()=>{
                     <li className="list-item plan">
                         <div>
                             <p className="list-title">{selectedPlan}({selectedPlanDuration})</p>
-                            <button className="change-btn">Change</button>
+                            <button onClick={handleChangePlan} className="change-btn">Change</button>
                         </div>
-                        <p className="list-price">$9/mo</p>
+                        <p className="list-price">{pricingPlans[selectedPlanId]?.planMoPrice}</p>
                     </li>
                     <li className="list-item">
                             <p className="sublist-title">Online Service</p>
