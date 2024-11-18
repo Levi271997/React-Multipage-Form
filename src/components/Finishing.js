@@ -17,12 +17,11 @@ const Finishing = ()=>{
         emailerror, 
         numbererror,
         pricingPlans,
-    selectedPlanId
+    selectedPlanId, addons
  }= useFormObjects();
 
         const handleChangePlan=()=>{
             setStep(2);
-            console.log(selectedPlanId);
         }
     
     return(
@@ -37,16 +36,28 @@ const Finishing = ()=>{
                             <p className="list-title">{selectedPlan}({selectedPlanDuration})</p>
                             <button onClick={handleChangePlan} className="change-btn">Change</button>
                         </div>
-                        <p className="list-price">{pricingPlans[selectedPlanId]?.planMoPrice}</p>
+                        <p className="list-price">${pricingPlans[selectedPlanId]?.planMoPrice}{selectedPlanDuration === 'Monthly' ? "/mo" : '/yr'}</p>
                     </li>
-                    <li className="list-item">
-                            <p className="sublist-title">Online Service</p>
-                            <p className="sublist-price">+$1/mo</p>
-                    </li>
-                    <li className="list-item">
-                            <p className="sublist-title">Larger Storage</p>
-                            <p className="sublist-price">+$2/mo</p>
-                    </li>
+
+{
+    addons.map((addon)=>{
+        if(addon.addonSelected){
+            return(
+                <li className="list-item">
+                <p className="sublist-title">{addon.addontitle}</p>
+                <p className="sublist-price">+${addon.price} {selectedPlanDuration === 'Monthly' ? `${addon.addonMoprice}/mo` : `${addon.addonYrPrice}/yr`}</p>
+                </li>
+            )
+        }else{
+            return null;
+        }
+       
+    })
+}
+            
+                
+
+
                 </ul> 
                 <div className="total">
                     <p className="sublist-title total-label">Total (per month)</p>

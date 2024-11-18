@@ -1,54 +1,56 @@
+import { useFormObjects } from "../context/FormContext";
+
 const Step3 = ()=>{
+
+    const {addons, selectedPlanDuration, setaddons } = useFormObjects();
+
+    
+    const handleToggleAddonSelection = (e) => {
+        const addonName = e.target.name; // Get the name of the clicked checkbox
+      
+        setaddons(currentAddons =>
+          currentAddons.map(addon =>
+            addon.addonname === addonName
+              ? { ...addon, addonSelected: !addon.addonSelected }
+              : addon
+          )
+        );
+      };
+      
+      
+
     return(
         <>
           <h2 className='form-title'>Pick add-ons</h2>
           <p className='form-instruct'>Add-ons help enhance your gaming experience.</p>
 
           <form>
-                <div className="addons-card checkgroup">
-                <input type="checkbox" name="online-service" className="check-item"/>
-                    <div className="card-checkbox"> 
-                        <div className="checkBox-wrap">
-                           
-                        </div>
-                        <div>
-                            <p className="card-title">Online Service</p>
-                            <p className="card-info">Access to multiplayer games</p>
-                        </div>
-                    </div>
-                    <p className="card-price">+$1/mo</p>
 
-                </div>      
+                {
+                    addons.map((addon, index)=>{
+                        return(
+                            <div key={index} className="addons-card checkgroup">
+                            <input type="checkbox" name={addon.addonname} className="check-item" onChange={handleToggleAddonSelection}/>
+                                <div className="card-checkbox"> 
+                                    <div className="checkBox-wrap">
+                                       
+                                    </div>
+                                    <div>
+                                        <p className="card-title">{addon.addontitle}</p>
+                                        <p className="card-info">{addon.addondesc}</p>
+                                    </div>
+                                </div>
+                                <p className="card-price">
+  +${addon.price} {selectedPlanDuration === 'Monthly' ? `${addon.addonMoprice}/mo` : `${addon.addonYrPrice}/yr`}
+</p>
 
-                  <div className="addons-card checkgroup">
-                <input type="checkbox" name="large-storage" className="check-item"/>
-                    <div className="card-checkbox"> 
-                        <div className="checkBox-wrap">
-                           
-                        </div>
-                        <div>
-                            <p className="card-title">Larger storage</p>
-                            <p className="card-info">Extra 1TB of cloud save</p>
-                        </div>
-                    </div>
-                    <p className="card-price">+$2/mo</p>
+                            </div>      
+                        )
+                    })
+                }
+              
 
-                </div>      
-
-                <div className="addons-card checkgroup">
-                <input type="checkbox" name="customizable-profile" className="check-item"/>
-                    <div className="card-checkbox"> 
-                        <div className="checkBox-wrap">
-                           
-                        </div>
-                        <div>
-                            <p className="card-title">Customizable profile</p>
-                            <p className="card-info">Custom theme on your profile</p>
-                        </div>
-                    </div>
-                    <p className="card-price">+$2/mo</p>
-
-                </div>       
+              
           </form>
         </>
     )

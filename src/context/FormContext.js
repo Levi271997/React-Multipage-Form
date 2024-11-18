@@ -55,6 +55,34 @@ export const FormObjectsProvider =({children}) => {
         },
       ]
 
+      const [addons, setaddons]= useState([
+        {
+          addonname: 'os',
+          addontitle: 'Online Services',
+          addondesc:'Access to multiplayer games',
+          addonMoprice: 1,
+          addonYrPrice:10,
+          addonSelected:false
+        },
+        {
+          addonname:'ls',
+          addontitle: 'Larger storage',
+          addondesc:'Extra 1TB of cloud save',
+          addonMoprice: 2,
+          addonYrPrice:20,
+          addonSelected:false
+        },
+        {
+          addonname: 'cp',
+          addontitle: 'Customizable profile',
+          addondesc:'Custom theme on your profile',
+          addonMoprice: 2,
+          addonYrPrice:20,
+          addonSelected:false
+        }
+      ]);
+
+    const [addonsid, setaddonsid]= useState([]);
       const [selectedPlan, setSelectedPlan]= useState('Arcade');
       const [selectedPlanDuration, setSelectedPlanDuration] = useState('Monthly');
       const [selectedPlanId, setSelectedPlanId] = useState(0);
@@ -76,7 +104,7 @@ export const FormObjectsProvider =({children}) => {
           numbererror,
           pricingPlans,
           selectedPlanId,
-          setSelectedPlanId }}>
+          setSelectedPlanId,addons ,setaddons}}>
                 {children}
         </FormContext.Provider>
       )
