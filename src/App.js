@@ -61,7 +61,7 @@ function App() {
     numbererror.current.innerText="";
   }
   }else{
-    setStep((currentStep)=> (step < 4) ? currentStep + 1 : step);
+    setStep((currentStep)=> (step < 5) ? currentStep + 1 : step);
   }
  }
  const handlePrevStepSet=()=>{
@@ -78,13 +78,17 @@ function App() {
                  <div className='forms-group'>
                 { RenderForm(step)}
                  </div>
-                 <div className='steps-buttons'>
+                 {
+                  step !==5 ?
+                <div className='steps-buttons'>
                   {(step > 1 ) ?  <button onClick={handlePrevStepSet} className='btn steps-prev'>Go Back</button> : null}
 
                   {
-                    (step !== 4) ?  <button onClick={handleNextStepSet} className='btn steps-next'>Next Step</button>:  <button className='btn steps-next'>Confirm</button>
+                    (step !== 4) ?  <button onClick={handleNextStepSet} className='btn steps-next'>Next Step</button>:  <button onClick={handleNextStepSet} className='btn steps-next'>Confirm</button>
                   }
-                   </div>
+                   </div>:null
+                 }
+                
                 </div>
               </div>
            
@@ -108,6 +112,9 @@ function RenderForm(step){
    
     case 4:
       return <Finishing/>
+
+      case 5:
+        return <Thankyou/>
 
     default:
       return null;
