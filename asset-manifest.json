@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/React-Multipage-Form/static/css/main.35277ff5.css",
+    "main.js": "/React-Multipage-Form/static/js/main.96c5e3f4.js",
+    "static/js/453.6906ceac.chunk.js": "/React-Multipage-Form/static/js/453.6906ceac.chunk.js",
+    "static/media/Ubuntu-Regular.ttf": "/React-Multipage-Form/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
+    "static/media/Ubuntu-Medium.ttf": "/React-Multipage-Form/static/media/Ubuntu-Medium.e37c5546eb1a6efc4818.ttf",
+    "static/media/Ubuntu-Bold.ttf": "/React-Multipage-Form/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
+    "static/media/bg-sidebar-desktop.svg": "/React-Multipage-Form/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
+    "static/media/icon-advanced.svg": "/React-Multipage-Form/static/media/icon-advanced.705bd10c4c1f688871d729633f0ca4ae.svg",
+    "static/media/icon-thank-you.svg": "/React-Multipage-Form/static/media/icon-thank-you.ee753f231cc5a5789b8eb922a96472c0.svg",
+    "static/media/icon-pro.svg": "/React-Multipage-Form/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
+    "index.html": "/React-Multipage-Form/index.html",
+    "static/media/icon-arcade.svg": "/React-Multipage-Form/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
+    "static/media/check.svg": "/React-Multipage-Form/static/media/check.91ad5f5629a015f16a0e.svg",
+    "main.35277ff5.css.map": "/React-Multipage-Form/static/css/main.35277ff5.css.map",
+    "main.96c5e3f4.js.map": "/React-Multipage-Form/static/js/main.96c5e3f4.js.map",
+    "453.6906ceac.chunk.js.map": "/React-Multipage-Form/static/js/453.6906ceac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.35277ff5.css",
+    "static/js/main.96c5e3f4.js"
+  ]
+}
